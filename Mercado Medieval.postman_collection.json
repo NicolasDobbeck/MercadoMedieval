@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "19c56428-a8c6-4dc2-8b93-ba88e9baf25b",
+		"name": "Mercado Medieval",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26266834"
+	},
+	"item": [
+		{
+			"name": "Create Personagem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Arthur\",\r\n    \"classe\": \"GUERREIRO\",\r\n    \"nivel\": 5,\r\n    \"moedas\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por Nome",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por Classe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personagens?classe=GUERREIRO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personagens"
+					],
+					"query": [
+						{
+							"key": "classe",
+							"value": "GUERREIRO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Poção de Vida\",\r\n  \"tipo\": \"POCAO\",\r\n  \"raridade\": \"COMUM\",\r\n  \"preco\": 50,\r\n  \"dono\": {\r\n    \"id\": 2\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/itens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"itens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Personagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/personagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Personagem",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Luna\",\r\n  \"classe\": \"ARQUEIRO\",\r\n  \"nivel\": 20,\r\n  \"moedas\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personagens/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personagens",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Personagem",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/personagens/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"personagens",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar item nome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/itens/buscar?nome=Poção",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"itens",
+						"buscar"
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Poção"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar item por tipo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/itens/buscar?tipo=POCAO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"itens",
+						"buscar"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "POCAO"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
