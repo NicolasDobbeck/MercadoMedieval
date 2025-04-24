@@ -66,10 +66,10 @@ public class ItemController {
     @PutMapping("{id}")
     public Item update(@PathVariable Long id, @RequestBody @Valid Item item) {
         log.info("Atualizando item com id " + id);
-        getItem(id);
+        Item existente = getItem(id);
         item.setId(id);
-        repository.save(item);
-        return item;
+        item.setDono(existente.getDono());
+        return repository.save(item);
     }
 
     private Item getItem(Long id) {
@@ -78,8 +78,8 @@ public class ItemController {
 
     @GetMapping("buscar-por-nome")
     public List<Item> buscarPorNome(@RequestParam String nome) {
-        return repository.findByNomeContainingIgnoreCase(nome);
-    }
+    return repository.findByNomeContainingIgnoreCase(nome);
+}
 
     @GetMapping("buscar-por-tipo")
     public List<Item> buscarPorTipo(@RequestParam TipoItem tipo) {

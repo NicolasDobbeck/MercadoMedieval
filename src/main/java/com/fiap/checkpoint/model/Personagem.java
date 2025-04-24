@@ -2,7 +2,9 @@ package com.fiap.checkpoint.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.*;
@@ -36,8 +38,10 @@ public class Personagem {
     @Min(value = 0, message = "O saldo de moedas não pode ser negativo")
     private double moedas;
 
-    @OneToMany(mappedBy = "dono")
-    private List<Item> itens;
+    @OneToMany(mappedBy = "dono", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    @JsonBackReference
+    private List<Item> item;
 
     @JsonCreator
     public Personagem(@JsonProperty("id") Long id) {
