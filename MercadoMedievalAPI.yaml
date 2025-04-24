@@ -1,0 +1,374 @@
+type: collection.insomnia.rest/5.0
+name: Imported Workspace
+meta:
+  id: wrk_9a65a70aa8c246c1a6d13037a02b3b95
+  created: 1745454864350
+  modified: 1745454864350
+collection:
+  - name: Personagem
+    meta:
+      id: fld_3b61ea53e3654d23a62cac4be8d73a50
+      created: 1745446193169
+      modified: 1745454869601
+      sortKey: -1745447505680
+    children:
+      - url: http://localhost:8080/personagens
+        name: Create Personagem
+        meta:
+          id: req_2ea15db4f9f14867846765f147894199
+          created: 1745446193169
+          modified: 1745454909571
+          isPrivate: false
+          sortKey: -1745446193275
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Helena",
+            	"classe": "ARQUEIRO",
+            	"nivel": 4,
+            	"moedas": 80
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/personagens/buscar-por-nome?nome=Arthur
+        name: Buscar por Nome
+        meta:
+          id: req_673ed50558af43198a0b18ca670d8eed
+          created: 1745446193170
+          modified: 1745447295724
+          isPrivate: false
+          sortKey: -1745446193170
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/personagens/buscar-por-classe?classe=GUERREIRO
+        name: Buscar por Classe
+        meta:
+          id: req_19cb10ff86234f2e97c64fdf6eef478e
+          created: 1745446193171
+          modified: 1745447361520
+          isPrivate: false
+          sortKey: -1745446193171
+        method: GET
+        parameters:
+          - name: classe
+            value: GUERREIRO
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/personagens
+        name: Listar Personagens
+        meta:
+          id: req_b0b481e323a242628dabbbe0ca6a656c
+          created: 1745446193173
+          modified: 1745447525737
+          isPrivate: false
+          sortKey: -1745446193225
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/personagens/1
+        name: Atualizar Personagem
+        meta:
+          id: req_6a2c20d53a4c42c28a65f4434156afd7
+          created: 1745446193174
+          modified: 1745447492146
+          isPrivate: false
+          sortKey: -1745446193171.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: "{\r
+
+            \  \"nome\": \"Luna\",\r
+
+            \  \"classe\": \"ARQUEIRO\",\r
+
+            \  \"nivel\": 20,\r
+
+            \  \"moedas\": 1000\r
+
+            }"
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/personagens/1
+        name: Deletar Personagem
+        meta:
+          id: req_36c1524d2c9945468cb07570b320a8d4
+          created: 1745446193175
+          modified: 1745450327453
+          isPrivate: false
+          sortKey: -1745446193171.25
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Item
+    meta:
+      id: fld_f24056ebd869490db24680979e0b3199
+      created: 1745447505080
+      modified: 1745452710944
+      sortKey: -1745447505580
+    children:
+      - url: http://localhost:8080/itens
+        name: Create Item
+        meta:
+          id: req_8fec3ae5cd034a8ab0cb7ff0a72823a4
+          created: 1745446193172
+          modified: 1745453952891
+          isPrivate: false
+          sortKey: -1745451340327
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Espada",
+            	"tipo": "ARMA",
+            	"raridade": "RARO",
+            	"preco": 100,
+            	"dono": {
+            		"id": 1
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/itens/buscar-por-nome?nome=spa
+        name: Buscar item Nome Parcial
+        meta:
+          id: req_42acc447a425453996c8bba3119caab3
+          created: 1745446193175
+          modified: 1745451478609
+          isPrivate: false
+          sortKey: -1745451340227
+        method: GET
+        parameters:
+          - disabled: false
+            id: pair_a82339c995464ce69866c7c85f7ab095
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/itens/buscar-por-tipo?tipo=ARMA
+        name: Buscar item por Tipo
+        meta:
+          id: req_b08df0e6947e4445b393c5992a270b85
+          created: 1745446193176
+          modified: 1745451407164
+          isPrivate: false
+          sortKey: -1745451340127
+        method: GET
+        parameters:
+          - name: tipo
+            value: POCAO
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/itens/buscar-por-raridade?raridade=RARO
+        name: Buscar item Raridade
+        meta:
+          id: req_82d1b6a5714b4c9390dc115a4d6cd67f
+          created: 1745451338329
+          modified: 1745451464878
+          isPrivate: false
+          sortKey: -1745451340027
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/itens/buscar-por-nome?nome=Espada
+        name: Buscar item Nome
+        meta:
+          id: req_53a830e943cf47488097549e07bb469b
+          created: 1745451484185
+          modified: 1745451508553
+          isPrivate: false
+          sortKey: -1745451340277
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/itens/buscar-por-preco?min=50&max=300
+        name: Buscar itens por preço mínimo e máximo
+        meta:
+          id: req_c184cc48ee234f38b50df43c74c6a658
+          created: 1745451629178
+          modified: 1745454025460
+          isPrivate: false
+          sortKey: -1745451340302
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/itens
+        name: Listar Itens
+        meta:
+          id: req_58d9a8a2441e4785b3b11ce39ac2ec58
+          created: 1745453516898
+          modified: 1745454137964
+          isPrivate: false
+          sortKey: -1745451340314.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/itens/1
+        name: Atualizar Item
+        meta:
+          id: req_2527bfad7f614d1ca8270603ae7bb45a
+          created: 1745453579600
+          modified: 1745454946363
+          isPrivate: false
+          sortKey: -1745451340308.25
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Espada Flamejante",
+              "tipo": "ARMA",
+              "raridade": "EPICO",
+              "preco": 150
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/itens/1
+        name: Deletar Item
+        meta:
+          id: req_94daf7b7843744178d60da8903ff6e93
+          created: 1745453581298
+          modified: 1745453912404
+          isPrivate: false
+          sortKey: -1745451340305.125
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_926e2d80db234b7193959243db4cfc07
+    created: 1745446194812
+    modified: 1745446194812
+environments:
+  name: Base Environment
+  meta:
+    id: env_4d56a8501c9442158e7c8f300de35db3
+    created: 1745446194811
+    modified: 1745446194811
+    isPrivate: false
